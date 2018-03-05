@@ -1,0 +1,30 @@
+$(document).ready(function(){
+
+    function hoverEffect(){
+        var outerHover = Math.floor(Math.random() * 3) + 1;
+        var InnerHover = Math.floor(Math.random() * 5) + 1;
+
+        $('.skills-section-block .my-block ul li a').addClass('animated');
+
+        $('.skills-section-block .my-block ul li a').removeClass('hover');
+        $('.skills-section-block .my-block:nth-child(' + outerHover + ') ul li:nth-child(' + InnerHover + ') a').addClass('hover');
+
+        $('.skills-section-block .my-block ul li a').removeClass('bounce');
+        $('.skills-section-block .my-block:nth-child(' + outerHover + ') ul li:nth-child(' + InnerHover + ') a').addClass('bounce');
+    }
+
+    setInterval(hoverEffect,1500);
+    console.log($(document).width());
+
+    $('.code-animate h1 em').on('click', function(){
+        if ($(document).width() > 640) {
+            $('.first_name').text('Yeshwanth');
+            $('.last_name').text('Thakur');
+            $('.code-animate h1 a').css({'width' : '250px', 'border-radius' : '20px'});
+            $('.first_name').css({'left': '10px'});
+            $('.last_name').css({'left': 'auto', 'right' : '10px'});
+        }
+    });
+
+
+});
